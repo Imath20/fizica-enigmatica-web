@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Search, Wave, Pendulum, Earthquake, Prism } from 'lucide-react';
+import { Search, Waves, Clock, Zap, Triangle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,10 +16,10 @@ const Index = () => {
   const [selectedProblem, setSelectedProblem] = useState<Problema | null>(null);
 
   const categorii = [
-    { id: 'unde', nume: 'Unde', icon: Wave, color: 'bg-blue-100 text-blue-700' },
-    { id: 'pendule', nume: 'Pendule', icon: Pendulum, color: 'bg-green-100 text-green-700' },
-    { id: 'seisme', nume: 'Seisme', icon: Earthquake, color: 'bg-red-100 text-red-700' },
-    { id: 'difractie', nume: 'Difracția Luminii', icon: Prism, color: 'bg-purple-100 text-purple-700' }
+    { id: 'unde', nume: 'Unde', icon: Waves, color: 'bg-blue-100 text-blue-700' },
+    { id: 'pendule', nume: 'Pendule', icon: Clock, color: 'bg-green-100 text-green-700' },
+    { id: 'seisme', nume: 'Seisme', icon: Zap, color: 'bg-red-100 text-red-700' },
+    { id: 'difractie', nume: 'Difracția Luminii', icon: Triangle, color: 'bg-purple-100 text-purple-700' }
   ];
 
   const difficultati = [
@@ -161,7 +160,7 @@ const Index = () => {
                 {filteredProblems.map((problema) => {
                   const categoria = categorii.find(c => c.id === problema.categorie);
                   const dificultate = difficultati.find(d => d.id === problema.dificultate);
-                  const Icon = categoria?.icon || Wave;
+                  const Icon = categoria?.icon || Waves;
                   
                   return (
                     <div 
